@@ -1,0 +1,56 @@
+[
+    {
+        "label": "sqlite3",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "sqlite3",
+        "description": "sqlite3",
+        "detail": "sqlite3",
+        "documentation": {}
+    },
+    {
+        "label": "check_email",
+        "kind": 2,
+        "importPath": "register",
+        "description": "register",
+        "peekOfCode": "def check_email(email):\n    try:\n        sql.execute(\"SELECT * FROM users WHERE email = ?\", (email,))\n        result = sql.fetchone()\n        if result:\n            print(\"Error_email artiq qeydiyyat olub\")\n            return True\n        else:\n            return False\n    except sqlite3.Error as e:",
+        "detail": "register",
+        "documentation": {}
+    },
+    {
+        "label": "register_user",
+        "kind": 2,
+        "importPath": "register",
+        "description": "register",
+        "peekOfCode": "def register_user():\n    username = input(\"username: \").strip()\n    password = input(\"password: \").strip()\n    re_password = input(\"password again: \").strip()\n    email = input(\"email: \").strip()\n    first_name = input(\"first name: \").strip()\n    last_name = input(\"last name: \").strip()\n    if password != re_password:\n        print(\"Error_Sifreler uygun deyil.\")\n        return",
+        "detail": "register",
+        "documentation": {}
+    },
+    {
+        "label": "main",
+        "kind": 2,
+        "importPath": "register",
+        "description": "register",
+        "peekOfCode": "def main():\n    # create_table()\n    while True:\n        choice = input(\"Secim: 1) Qeydiyyatdan kecin (2) Cixish:: \").strip()\n        if choice == \"1\":\n            register_user()\n        elif choice == \"2\":\n            print(\"Exiting...\")\n            break\n        else:",
+        "detail": "register",
+        "documentation": {}
+    },
+    {
+        "label": "db",
+        "kind": 5,
+        "importPath": "register",
+        "description": "register",
+        "peekOfCode": "db = sqlite3.connect(\"register.db\")\nsql = db.cursor()\n# sql.execute('''CREATE TABLE IF NOT EXISTS users (\n#                 id INTEGER PRIMARY KEY,\n#                 username TEXT NOT NULL, \n#                 password TEXT NOT NULL,\n#                 re_password TEXT NOT NULL,\n#                 email TEXT NOT NULL UNIQUE,\n#                 first_name TEXT,\n#                 last_name TEXT",
+        "detail": "register",
+        "documentation": {}
+    },
+    {
+        "label": "sql",
+        "kind": 5,
+        "importPath": "register",
+        "description": "register",
+        "peekOfCode": "sql = db.cursor()\n# sql.execute('''CREATE TABLE IF NOT EXISTS users (\n#                 id INTEGER PRIMARY KEY,\n#                 username TEXT NOT NULL, \n#                 password TEXT NOT NULL,\n#                 re_password TEXT NOT NULL,\n#                 email TEXT NOT NULL UNIQUE,\n#                 first_name TEXT,\n#                 last_name TEXT\n#             )''')",
+        "detail": "register",
+        "documentation": {}
+    }
+]
