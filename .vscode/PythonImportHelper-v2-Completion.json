@@ -9,6 +9,15 @@
         "documentation": {}
     },
     {
+        "label": "getpass",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "getpass",
+        "description": "getpass",
+        "detail": "getpass",
+        "documentation": {}
+    },
+    {
         "label": "check_email",
         "kind": 2,
         "importPath": "register",
@@ -22,7 +31,7 @@
         "kind": 2,
         "importPath": "register",
         "description": "register",
-        "peekOfCode": "def register_user():\n    username = input(\"username: \").strip()\n    password = input(\"password: \").strip()\n    re_password = input(\"password again: \").strip()\n    email = input(\"email: \").strip()\n    first_name = input(\"first name: \").strip()\n    last_name = input(\"last name: \").strip()\n    if password != re_password:\n        print(\"Error_Sifreler uygun deyil.\")\n        return",
+        "peekOfCode": "def register_user():\n    username = input(\"username: \").strip()\n    password = getpass.getpass(\"password: \").strip()\n    re_password = getpass.getpass(\"password again: \").strip()\n    email = input(\"email: \").strip()\n    first_name = input(\"first name: \").strip()\n    last_name = input(\"last name: \").strip()\n    if password != re_password:\n        print(\"Error_Sifreler uygun deyil.\")\n        return",
         "detail": "register",
         "documentation": {}
     },

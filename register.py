@@ -16,6 +16,7 @@
 # Hər şey qaydasındadırsa success mesajı qaytarsın və məlumatlar databazaya otursun
 
 import sqlite3
+import getpass
 
 db = sqlite3.connect("register.db")
 sql = db.cursor()
@@ -46,8 +47,8 @@ def check_email(email):
 
 def register_user():
     username = input("username: ").strip()
-    password = input("password: ").strip()
-    re_password = input("password again: ").strip()
+    password = getpass.getpass("password: ").strip()
+    re_password = getpass.getpass("password again: ").strip()
     email = input("email: ").strip()
     first_name = input("first name: ").strip()
     last_name = input("last name: ").strip()
